@@ -55,12 +55,13 @@
 
 	<section class="section bg-blue-dark">
 		<div class="text-content text-white">
+			
 			<h2 class="bottom-line--white"> <?php the_field('about_title'); ?> </h2>
 			<p class="text-weight-lit"> <?php the_field('about_text'); ?> </p>
 		</div>
 	</section>
 
-	<section class="section form">
+	<section class="section form bg-blue-dark">
 		<div class="form-wrapper">
 		<div class="logo text-center">
 			<!-- svg logo - toddmotto.com/mastering-svg-use-for-a-retina-web-fallbacks-with-png-script -->
