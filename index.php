@@ -5,14 +5,14 @@
 
 <main class="main" role="main">
 	<section class="section hero">
-		<div class="hero-wrap">
+		<div class="hero-wrap fade-in">
 			<h1><?php the_field('headline_text'); ?></h1>
 			<h3 class="top-line--blue"><?php the_field('subheading') ?></h3>
 			<a class="cta cta--filled">
 				<?php the_field('contact_button_text') ?>
 			</a>
 		</div>
-		<div class="logo-side">
+		<div class="logo-side slide-in-left">
 			<?php include_once("img/hpvico_icons/svg/hpvico.svg") ?>
 		</div>
 	</section>
@@ -52,14 +52,23 @@
 		endif;
 		?>
 	</section>
+	
+	
+	<section class="section photo-and-text bg-blue-dark" >
+	
+	<!-- <img class="photo" src=<?php the_field('image'); ?> /> -->
 
-	<section class="section bg-blue-dark">
-		<div class="text-content text-white">
-			
-			<h2 class="bottom-line--white"> <?php the_field('about_title'); ?> </h2>
-			<p class="text-weight-lit"> <?php the_field('about_text'); ?> </p>
-		</div>
+	<div class="uploaded-photo" style="background-image: url(<?php the_field('image');?>)" >
+		<div class="bg-transparent-color"></div>
+	</div>
+
+	<div class="text-content text-white">
+		<h2 class="bottom-line--white"> <?php the_field('about_title'); ?> </h2>
+		<p class="text-weight-lit"> <?php the_field('about_text'); ?> </p>
+	</div>
+	
 	</section>
+
 
 	<section class="section form bg-blue-dark">
 		<div class="form-wrapper">

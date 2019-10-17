@@ -189,11 +189,7 @@ input:focus {
 	display: table; /* elements width set to content width */
 }
 
-.bottom-line--white {
-	padding-bottom: 0.5em;
-	border-bottom: 2px solid #fff;
-	display: table; /* elements width set to content width */
-}
+
 
 .cta--filled {
 	margin: 0;
@@ -209,7 +205,7 @@ input:focus {
 	position: absolute;
     bottom: -20px;
     right: -25%;
-    width: 50vw;
+	width: 50vw;
 }
 
 .logo-arrow {
@@ -241,10 +237,47 @@ input:focus {
 
 .bg-blue-dark {
 	background-color: #023f85;
+
 }
 
 .bg-green {
 	background-color: #89b858;
+}
+
+.bg-transparent-color{
+	background-color: rgba(2, 63, 133, 0.5);
+	height: 100%;
+	z-index: 2;
+}
+
+.photo-and-text {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	padding: 8em 0 20em 0;
+}
+
+.uploaded-photo {
+	min-width: 30vw;
+	height: 40vw;
+	margin-right: 6em;
+	background-position: center;
+}
+
+.photo-half-border {
+	border-top-style: solid;
+	border-right-style: solid;
+	border-left-style: hidden;
+	border-bottom-style: hidden;
+	border-width: 4px;
+	border-color: #2cad6e;
+}
+
+.bottom-line--white {
+	margin-top: 0; 
+	padding-bottom: 0.5em;
+	border-bottom: 2px solid #fff;
+	display: table; /* elements width set to content width */
 }
 
 .text-center {
@@ -252,8 +285,8 @@ input:focus {
 }
 
 .text-content {
-	width: 65%;
-	padding: 3em 0 20em 0;
+	margin-right: 5em;
+	
 }
 
 .text-white {
@@ -296,9 +329,18 @@ p {
 .form-wrapper {
 	/* border: 1.25px solid  #023f85;
 	border-radius: 2.5px; */
-	margin: 5em;
-	padding: 3em 3em 1em 3em;
+	margin: 5em 5em 0 5em;
+	padding: 6em;
 	background-color: #fff;
+	min-width: 50vw;
+	 /* clip-path: 
+    polygon(
+	  50% 0,
+	  100% 25%,
+      100% 100%,
+	  0 100%,
+	  0 25%
+    );  */
 	/* max-width: 40vw; */
 }
 
@@ -344,6 +386,38 @@ p {
 }
 
 /*------------------------------------*\
+    KEYFRAMES
+\*------------------------------------*/
+
+.slide-in-left {
+	animation: slideInLeft 1s;
+}
+
+.fade-in {
+	animation: fadeIn 1s;
+}
+
+@keyframes slideInLeft {
+	from {
+		right: -55%;
+		opacity: 0;
+	}
+	to {
+		right: -25%;
+		opacity: 1;
+	}
+  }
+
+@keyframes fadeIn {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
+
+/*------------------------------------*\
     IMAGES
 \*------------------------------------*/
 
@@ -370,9 +444,13 @@ p {
 }
 @media only screen and (min-width:1024px) {
 
+
 }
 @media only screen and (min-width:1140px) {
-
+	h1 {
+		font-size: 6rem;
+	}
+	
 }
 @media only screen and (min-width:1280px) {
 
