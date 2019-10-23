@@ -13,16 +13,14 @@
 		<meta name="description" content="<?php bloginfo('description'); ?>">
 
 		<?php wp_head(); ?>
+
 		<script>
-        // conditionizr.com
-        // configure environment tests
-        conditionizr.config({
-            assets: '<?php echo get_template_directory_uri(); ?>',
-            tests: {}
-        });
+			var ajaxurl = "<?php echo admin_url("admin-ajax.php"); ?>";
         </script>
 
 	</head>
+
+
 	<body <?php body_class(); ?>>
 
 		<!-- wrapper -->
@@ -42,8 +40,8 @@
 
 					<nav class="nav">
 						<ul class="nav__links">
-							<li class="nav__item"><a href=#>Features</a></li>
-							<li class="nav__item"><a href=#>About</a></li>
+							<li class="nav__item nav__item--hide-on-mobile"><a href=#>Features</a></li>
+							<li class="nav__item nav__item--hide-on-mobile"><a href=#>About</a></li>
 							<li class="nav__item"><a href="#" class="cta">Contact</a></li>
 						</ul>
 					</nav>
