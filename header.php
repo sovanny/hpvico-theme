@@ -5,8 +5,6 @@
 		<title><?php wp_title(''); ?><?php if(wp_title('', false)) { echo ' :'; } ?> <?php bloginfo('name'); ?></title>
 
 		<link href="//www.google-analytics.com" rel="dns-prefetch">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/favicon.ico" rel="shortcut icon">
-        <link href="<?php echo get_template_directory_uri(); ?>/img/icons/touch.png" rel="apple-touch-icon-precomposed">
 
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,6 +14,8 @@
 
 		<script>
 			var ajaxurl = "<?php echo admin_url("admin-ajax.php"); ?>";
+			var fileDownloadUrl = "<?php the_field('file_url', 'option'); ?>";
+			var fileDownloadName = "<?php the_field('file_name', 'option'); ?>";
         </script>
 
 	</head>
@@ -40,9 +40,18 @@
 
 					<nav class="nav">
 						<ul class="nav__links">
-							<li class="nav__item nav__item--hide-on-mobile"><a href=#>Features</a></li>
-							<li class="nav__item nav__item--hide-on-mobile"><a href=#>About</a></li>
-							<li class="nav__item"><a href="#" class="cta">Contact</a></li>
+						<?php if (have_rows('custom_links', 'option')) : ?>
+						<?php 	while (have_rows('custom_links', 'option')) : the_row(); ?>
+						<li class="nav__item nav__item--hide-on-mobile">
+							<a href="<?php the_sub_field('custom_link_page'); ?>">
+							<?php the_sub_field('custom_link_name'); ?>
+							</a>
+						</li>
+						<?php 	endwhile; ?>
+						<?php endif; ?>
+							<li class="nav__item nav__item--hide-on-mobile"><a href="#features">Features</a></li>
+							<li class="nav__item nav__item--hide-on-mobile"><a href="#about">About</a></li>
+							<li class="nav__item btn-no-select"><a href="#contact" class="cta margin-left-05 ">Get datasheet</a></li>
 						</ul>
 					</nav>
 					

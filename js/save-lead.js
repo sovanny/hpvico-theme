@@ -1,7 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+
     async function saveLead(e) {
-        console.log('ajaxurl');
-        console.log(ajaxurl);
         e.preventDefault();
         try {
             serialize = function (obj) {
@@ -22,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 message: document.getElementById("message").value,
                 consent: document.getElementById("consent").checked ? 1 : 0,
             };
-
             const response = await fetch(ajaxurl, {
                 method: 'POST', // *GET, POST, PUT, DELETE, etc.
                 headers: {
@@ -30,14 +28,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 },
                 body: serialize(data)
             });
-            console.log(data);
-            console.log(response);
-            const responseJson = await response.json();
-            console.log(responseJson);
+            const responseJson = await response;
+            //console.log(responseJson);
         }
         catch (err) {
             console.log(err);
         }
+        
+        downloadFile(fileDownloadUrl, fileDownloadName);
     }
 
     document.getElementById('form').addEventListener('submit', saveLead);
