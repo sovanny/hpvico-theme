@@ -53,8 +53,8 @@ function register_acf_options_pages() {
 // Add Actions
 add_action('init', 'hpvico_header_scripts'); // Add Custom Scripts to wp_head
 add_action('wp_enqueue_scripts', 'hpvico_styles'); // Add Theme Stylesheet
-add_action('wp_footer', 'hpvico_footer_scripts');
-add_action('acf/init', 'register_acf_options_pages');
+add_action('wp_footer', 'hpvico_footer_scripts'); // Add Custom Scripts to footer
+add_action('acf/init', 'register_acf_options_pages'); // Add ACF option page
 
 // Remove Actions
 remove_action('wp_head', 'feed_links_extra', 3); // Display the links to the extra feeds such as category feeds
