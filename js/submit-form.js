@@ -1,11 +1,13 @@
+import downloadFile from './download-file';
+
 document.addEventListener("DOMContentLoaded", function () {
 
     async function saveLead(e) {
         e.preventDefault();
         try {
-            serialize = function (obj) {
-                var str = [];
-                for (var p in obj)
+            var serialize = function (obj) {
+                let str = [];
+                for (let p in obj)
                     if (obj.hasOwnProperty(p)) {
                         str.push(encodeURIComponent(p) + "=" + encodeURIComponent(obj[p]));
                     }
@@ -36,6 +38,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         
         downloadFile(fileDownloadUrl, fileDownloadName);
+        document.getElementById("submit").disabled = true;
+
+        let snack = document.getElementById("snackbar");
+        snack.classList.add("snackbar--show");
+        setTimeout(function(){ snack.classList.remove("snackbar--show"); }, 3000);
     }
 
     document.getElementById('form').addEventListener('submit', saveLead);
